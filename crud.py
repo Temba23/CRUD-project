@@ -19,18 +19,23 @@ def inquiry():
         #     print("Thank you. See you again")
 
     elif selection == "r":
-        cont = read()
+        id = input("Enter the student ID")
+        cont = read(id)
         return continue_or_not(cont)
 
     elif selection == "u":
-        cont = update()
+        id = input("Enter the student id:")
+        to_change = input("What do you wish to change? (name, age, department)")
+        value = input(f"Give the new {to_change}")
+        cont = update(id, to_change, value)
         return continue_or_not(cont)
 
     elif selection == "d":
-        cont = delete()
+        id = input("Enter the student id:")
+        cont = delete(id)
         return continue_or_not(cont)
     else:
         print("Thank you. See you again")
-
-inquiry()
+if __name__=="__main__":
+    inquiry()
 
